@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b6b8117a-4053-43fc-b61d-8d04f7345c14": {
+      "ProjectGuid": "b6b8117a-4053-43fc-b61d-8d04f7345c14",
+      "DisplayName": "World statistics",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
