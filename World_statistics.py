@@ -1,5 +1,6 @@
 import mysql.connector
 from Analysis import Statistics
+from Graph import Plotting
 
 connection = mysql.connector.connect(host = "localhost", user = "read_only_user", password = "123", database = "world")
 print(connection)
@@ -12,7 +13,7 @@ fetched_data = cursor.fetchall()
 calculated_result = Stats.median_country_pop(fetched_data)
 for x in calculated_result:
     print(x)
-    
+plot = Plotting()
 
 def main():
     print("Hello world")
