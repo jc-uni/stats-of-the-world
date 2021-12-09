@@ -11,22 +11,29 @@ def main():
     Stats = Statistics()
     Plots = Plotting()
 
-    cursor.execute(Stats.median_city_pop_query)
-    fetched_city_pop = cursor.fetchall()
-
-    cursor.execute(Stats.median_country_pop_query)
-    fetched_country_pop = cursor.fetchall()
-
-    Plots.plot_averages(fetched_city_pop,fetched_country_pop)
-
+    #Average population of cities & countries
     cursor.execute(Stats.avg_city_pop_query)
-    fetched_city_pop_avg = cursor.fetchall()
+    fetched_city_pop = cursor.fetchall()
+    final_result_avg_city_pop = Stats.avg_city_pop(fetched_city_pop)
 
     cursor.execute(Stats.avg_country_pop_query)
-    fetched_country_pop_avg = cursor.fetchall()
+    fetched_country_pop = cursor.fetchall()
+    final_result_avg_country_pop = Stats.avg_country_pop(fetched_country_pop)
 
-    Plots.plot_medians(fetched_city_pop_avg, fetched_country_pop_avg)
+    Plots.plot_averages(final_result_avg_city_pop,final_result_avg_country_pop)
+    
+    #Median population of cities & countries
+    cursor.execute(Stats.median_city_pop_query)
+    fetched_city_pop_med = cursor.fetchall()
+    final_result_med_city_pop = Stats.median_city_pop(fetched_city_pop_med)
 
+    cursor.execute(Stats.median_country_pop_query)
+    fetched_country_pop_med = cursor.fetchall()
+    final_result_med_country_pop = Stats.median_country_pop(fetched_country_pop_med)
+
+    Plots.plot_medians(final_result_med_city_pop, final_result_med_country_pop)
+    
+    #Show average & median population of cities & countries
     Plots.show_graph()
     
 
