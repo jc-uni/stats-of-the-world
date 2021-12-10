@@ -5,7 +5,7 @@ class Statistics():
     median_country_pop_query = "SELECT Population FROM country WHERE IndepYear IS NOT NULL ORDER BY Population ASC"
 
     def average_value(self, data):
-        return data[0][0]
+        return round(data[0][0])
 
     def median_value(self, data):
         answer = data[round(len(data)/2)]
