@@ -9,12 +9,12 @@ class Plotting():
         unspecified_means = [5, 62, 24, 50, 15]
 
         x = np.arange(len(labels))  # the label locations
-        width = 0.15  # the width of the bars
+        width = 0.25  # the width of the bars
 
         fig, ax = plt.subplots()
-        rects1 = ax.bar(x - width/3, men_means, width, label='Men')
-        rects2 = ax.bar(x + width/3, women_means, width, label='Women')
-        rects3 = ax.bar(x- width/3, unspecified_means, width, label='unspecified')
+        rects1 = ax.bar(x, men_means, width, label='Men')
+        rects2 = ax.bar(x + width, women_means, width, label='Women')
+        rects3 = ax.bar(x + 2*width, unspecified_means, width, label='unspecified')
 
         # Add some text for labels, title and custom x-axis tick labels, etc.
         ax.set_ylabel('Scores')
