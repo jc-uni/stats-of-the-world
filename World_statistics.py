@@ -9,6 +9,13 @@ connection = mysql.connector.connect(host = "localhost", user = "read_only_user"
 print(connection)
 cursor = connection.cursor()
 
+def find_offical_languages_popsize_spoken():
+    fetched = fetch_data(Stats.offical_languages_popsize_spoken_query)
+    print(fetched)
+    print(len(fetched))
+    final_result = Stats.offical_languages_popsize_spoken(fetched)
+    Plots.plot_offical_languages_popsize_spoken()
+
 def find_average_pop_country_city():
     #Average population of cities & countries
     fetched_city_pop = fetch_data(Stats.avg_city_pop_query)
@@ -35,12 +42,12 @@ def fetch_data(sql_query):
     return fetched_data
 
 def main():
-    find_average_pop_country_city()
-    find_median_pop_country_city()
-    
-    #Show average & median population of cities & countries
+    #find_average_pop_country_city()
+    #find_median_pop_country_city()
+    Plots.show_graph() #Show average & median population of cities & countries
+
+    find_offical_languages_popsize_spoken()
     Plots.show_graph()
-    
 
 if __name__ == "__main__":
     main()
