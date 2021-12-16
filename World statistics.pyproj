@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b6b8117a-4053-43fc-b61d-8d04f7345c14</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>World_statistics.py</StartupFile>
+    <StartupFile>WorldStatistics.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,9 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Analysis.py" />
-    <Compile Include="Graph.py" />
-    <Compile Include="World_statistics.py" />
+    <Compile Include="Controller.py" />
+    <Compile Include="QueriesSQL.py" />
+    <Compile Include="Reformatting.py" />
+    <Compile Include="Graphing.py" />
+    <Compile Include="WorldStatistics.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
