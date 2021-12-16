@@ -12,9 +12,9 @@ cursor = connection.cursor()
 def find_offical_languages_popsize_spoken():
     fetched = fetch_data(Stats.offical_languages_popsize_spoken_query)
     print(fetched)
-    print(len(fetched))
+    #print(len(fetched))
     final_result = Stats.offical_languages_popsize_spoken(fetched)
-    Plots.plot_offical_languages_popsize_spoken()
+    Plots.plot_offical_languages_popsize_spoken(final_result)
 
 def find_average_pop_country_city():
     #Average population of cities & countries

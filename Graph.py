@@ -2,31 +2,34 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Plotting():
-    def plot_offical_languages_popsize_spoken(self):
-        labels = ['G1', 'G2', 'G3', 'G4', 'G5']
-        men_means = [20, 34, 30, 35, 27]
-        women_means = [25, 32, 34, 20, 25]
-        unspecified_means = [5, 62, 24, 50, 15]
+    def plot_offical_languages_popsize_spoken(self, data):
+        print(data)
+
+        labels = data[0]
+        total_pop = data[1]
+        language = data[2]
 
         x = np.arange(len(labels))  # the label locations
-        width = 0.25  # the width of the bars
+        width = 0.5  # the width of the bars
 
         fig, ax = plt.subplots()
-        rects1 = ax.bar(x, men_means, width, label='Men')
-        rects2 = ax.bar(x + width, women_means, width, label='Women')
-        rects3 = ax.bar(x + 2*width, unspecified_means, width, label='unspecified')
+        rects1 = ax.bar(x, language, width, label='Speakers')
+        rects2 = ax.bar(x + width, total_pop, width, label='Total pop')
 
         # Add some text for labels, title and custom x-axis tick labels, etc.
-        ax.set_ylabel('Scores')
-        ax.set_title('Scores by group and gender')
+        ax.set_ylabel('Population')
+        ax.set_title('Speakers of official languages of countries')
         ax.set_xticks(x, labels)
         ax.legend()
 
         ax.bar_label(rects1, padding=3)
         ax.bar_label(rects2, padding=3)
-        ax.bar_label(rects3, padding=3)
 
-        fig.tight_layout()
+        plt.setp(ax.get_xticklabels(), rotation=20, ha='right')
+
+        fig.tight_layout
+
+
     
     def plot_averages(self, avg_pop_city, avg_pop_country):
         np_avg = np.array([avg_pop_city, avg_pop_country])
