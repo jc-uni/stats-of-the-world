@@ -16,7 +16,7 @@ class Plotting():
         
         ax.set_ylabel('Population')
         ax.set_title('Speakers of official languages of countries')
-        ax.set_xticks(x, labels,rotation=15)
+        ax.set_xticks(x, labels)
         ax.legend()
 
         ax.bar_label(rects1, padding=3)
