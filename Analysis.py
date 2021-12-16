@@ -14,17 +14,7 @@ class Statistics():
             name_list.append(data[i][0] +", " +data[i][2])
             total_pop_list.append(data[i][1])
             pop_list.append(data[i][3])
-        #print(len(name_list))
-        #print(len(total_pop_list))
-        #print(len(pop_list))
-        
-        """
-        for i in range(len(data)):
-            if data[i][0] == data[i-1][0]:
-                print(data[i])
-                print(data[i-1])
-            else:
-                print(data[i])"""
+
         return name_list, total_pop_list, pop_list
 
 

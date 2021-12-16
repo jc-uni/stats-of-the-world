@@ -10,9 +10,8 @@ print(connection)
 cursor = connection.cursor()
 
 def find_offical_languages_popsize_spoken():
+    #Speakers of official languages in the countries of the world
     fetched = fetch_data(Stats.offical_languages_popsize_spoken_query)
-    print(fetched)
-    #print(len(fetched))
     final_result = Stats.offical_languages_popsize_spoken(fetched)
     Plots.plot_offical_languages_popsize_spoken(final_result)
 
@@ -42,8 +41,8 @@ def fetch_data(sql_query):
     return fetched_data
 
 def main():
-    #find_average_pop_country_city()
-    #find_median_pop_country_city()
+    find_average_pop_country_city()
+    find_median_pop_country_city()
     Plots.show_graph() #Show average & median population of cities & countries
 
     find_offical_languages_popsize_spoken()

@@ -3,8 +3,6 @@ import numpy as np
 
 class Plotting():
     def plot_offical_languages_popsize_spoken(self, data):
-        print(data)
-
         labels = data[0]
         total_pop = data[1]
         language = data[2]
@@ -15,21 +13,18 @@ class Plotting():
         fig, ax = plt.subplots()
         rects1 = ax.bar(x, language, width, label='Speakers')
         rects2 = ax.bar(x + width, total_pop, width, label='Total pop')
-
-        # Add some text for labels, title and custom x-axis tick labels, etc.
+        
         ax.set_ylabel('Population')
         ax.set_title('Speakers of official languages of countries')
-        ax.set_xticks(x, labels)
+        ax.set_xticks(x, labels,rotation=15)
         ax.legend()
 
         ax.bar_label(rects1, padding=3)
         ax.bar_label(rects2, padding=3)
 
-        plt.setp(ax.get_xticklabels(), rotation=20, ha='right')
+        plt.setp(ax.get_xticklabels(), rotation=15, ha='right')
 
         fig.tight_layout
-
-
     
     def plot_averages(self, avg_pop_city, avg_pop_country):
         np_avg = np.array([avg_pop_city, avg_pop_country])
