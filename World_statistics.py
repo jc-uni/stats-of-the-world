@@ -46,7 +46,7 @@ def main():
     Plots.show_graph() #Show average & median population of cities & countries
 
     find_offical_languages_popsize_spoken()
-    Plots.show_graph()
+    Plots.show_graph() #Show official languages & their # of speakers
 
 if __name__ == "__main__":
     main()

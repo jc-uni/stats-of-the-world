@@ -17,7 +17,6 @@ class Statistics():
 
         return name_list, total_pop_list, pop_list
 
-
     def average_value(self, data):
         return round(data[0][0])
 

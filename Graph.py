@@ -12,7 +12,7 @@ class Plotting():
 
         fig, ax = plt.subplots()
         rects1 = ax.bar(x, language, width, label='Speakers')
-        rects2 = ax.bar(x + width, total_pop, width, label='Total pop')
+        rects2 = ax.bar(x + width, total_pop, width, label='Total population of country')
         
         ax.set_ylabel('Population')
         ax.set_title('Speakers of official languages of countries')
