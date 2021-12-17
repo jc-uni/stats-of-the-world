@@ -1,5 +1,4 @@
 class Statistics():
-    
     def offical_languages_popsize_spoken(self, data):
         name_list = []
         total_pop_list = []
