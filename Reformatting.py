@@ -17,4 +17,3 @@ class Reformat():
     def median_value(self, data):
         answer = data[round(len(data)/2)]
         return answer[0]
-
