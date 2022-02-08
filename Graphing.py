@@ -7,6 +7,8 @@ class Plotting():
         ypoints = np.array(data[2])
 
         plt.plot(xpoints, ypoints, 'o')
+        plt.xlabel("life expectancy")
+        plt.ylabel("pop/km^2")
         plt.show()
 
     def plot_offical_languages_popsize_spoken(self, data):

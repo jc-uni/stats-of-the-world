@@ -12,16 +12,16 @@ class Reformat():
         return labels, life_expectancy, pop_density
 
     def offical_languages_popsize_spoken(self, data):
-        name_list = []
-        total_pop_list = []
-        pop_list = []
+        names = []
+        total_pops = []
+        pops = []
 
         for i in range(len(data)):
-            name_list.append(data[i][0] +", " +data[i][2])
-            total_pop_list.append(data[i][1])
-            pop_list.append(data[i][3])
+            names.append(data[i][0] +", " +data[i][2])
+            total_pops.append(data[i][1])
+            pops.append(data[i][3])
 
-        return name_list, total_pop_list, pop_list
+        return names, total_pops, pops
 
     def average_value(self, data):
         return round(data[0][0])
