@@ -1,4 +1,16 @@
 class Reformat():
+    def life_expectancy_popdensity_correlation(self, data):
+        labels = []
+        life_expectancy = []
+        pop_density = []
+
+        for i in range(len(data)):
+            labels.append(data[i][0])
+            life_expectancy.append(data[i][1])
+            pop_density.append(data[i][2])
+
+        return labels, life_expectancy, pop_density
+
     def offical_languages_popsize_spoken(self, data):
         name_list = []
         total_pop_list = []

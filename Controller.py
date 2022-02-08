@@ -36,3 +36,13 @@ class Control():
         Plots.plot_medians(final_result_med_city_pop, final_result_med_country_pop)
 
         Plots.show_graph()
+
+    def find_life_expectancy_popdensity_correlation(self):
+        #Correlation between average life expectancy & population density of a country
+        fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query)
+
+        reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
+        #reformatting here
+
+        Plots.plot_life_expectancy_popdensity_correlation(reformatted_fetched)
+        Plots.show_graph();

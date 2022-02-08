@@ -2,6 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Plotting():
+    def plot_life_expectancy_popdensity_correlation(self, data):
+        xpoints = np.array(data[1])
+        ypoints = np.array(data[2])
+
+        plt.plot(xpoints, ypoints, 'o')
+        plt.show()
+
     def plot_offical_languages_popsize_spoken(self, data):
         labels = data[0]
         total_pop = data[1]
