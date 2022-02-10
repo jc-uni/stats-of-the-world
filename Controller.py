@@ -39,9 +39,9 @@ class Control():
 
     def find_life_expectancy_popdensity_correlation(self):
         #Correlation between average life expectancy & population density of a country
-        fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query[1])
-
-        reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
-
-        Plots.plot_life_expectancy_popdensity_correlation(reformatted_fetched)
+        colors = ["red","green","blue", "cyan","yellow","black"]
+        for i in range(len(AllQueries.life_expectancy_popdensity_correlation_query)):
+            fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query[i])
+            reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
+            Plots.plot_life_expectancy_popdensity_correlation(reformatted_fetched,colors[i])
         Plots.show_graph();

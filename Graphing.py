@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Plotting():
-    def plot_life_expectancy_popdensity_correlation(self, data):
+    def plot_life_expectancy_popdensity_correlation(self, data, selected_color):
         xpoints = np.array(data[1])
         ypoints = np.array(data[2])
 
-        plt.scatter(xpoints, ypoints,color = 'pink')
+        plt.scatter(xpoints, ypoints,color = selected_color, s = 8)
         plt.xlabel("life expectancy")
         plt.ylabel("pop/km^2")
 
