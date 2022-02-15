@@ -3,10 +3,15 @@ import numpy as np
 
 class Plotting():
     def plot_life_expectancy_popdensity_correlation(self, data, selected_color):
-        xpoints = np.array(data[1])
-        ypoints = np.array(data[2])
-
+        xpoints = np.array(data[0])
+        ypoints = np.array(data[1])
+        plt.legend(["america","europe","asia","oceania","middle east","africa"], loc="upper left")
         plt.scatter(xpoints, ypoints,color = selected_color, s = 8)
+        plt.text(76,26000,"Macao")
+        plt.text(72,22000,"Monaco")
+        plt.text(71,6300,"Hong Kong")
+        plt.text(72,5200,"Singapore")
+        plt.text(72,3800,"Gibraltar")
         plt.xlabel("life expectancy")
         plt.ylabel("pop/km^2")
 
