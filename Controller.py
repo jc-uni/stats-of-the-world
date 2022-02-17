@@ -39,7 +39,7 @@ class Control():
 
     def find_life_expectancy_popdensity_correlation(self):
         #Correlation between average life expectancy & population density of a country
-        colors = ["black","green","blue", "red","yellow"]
+        colors = ["black","green","blue", "red","yellow","cyan"]
         for i in range(len(AllQueries.life_expectancy_popdensity_correlation_query)):
             fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query[i])
             reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
