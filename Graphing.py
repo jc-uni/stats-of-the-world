@@ -2,11 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Plotting():
-    def plot_life_expectancy_popdensity_correlation(self, data, selected_color):
-        xpoints = np.array(data[0])
-        ypoints = np.array(data[1])
-        
-        plt.scatter(xpoints, ypoints,color = selected_color, s = 8)
+    def plot_life_expectancy_popdensity_correlation(self, data):
+        colors = ["black","green","blue", "red","yellow"]
+        for n in range(len(data)):
+            xpoints = np.array(data[n][0])
+            ypoints = np.array(data[n][1])
+            plt.scatter(xpoints, ypoints,color = colors[n], s = 8)
+
         plt.text(76,26000,"Macao")
         plt.text(72,22000,"Monaco")
         plt.text(71,6300,"Hong Kong")
@@ -14,7 +16,7 @@ class Plotting():
         plt.text(72,3800,"Gibraltar")
         plt.xlabel("life expectancy")
         plt.ylabel("pop/km^2")
-        plt.legend(["america","europe","asia","oceania","middle east","africa"], loc="upper left")
+        plt.legend(["america","europe","asia","oceania","africa"], loc="upper left")
 
     def plot_offical_languages_popsize_spoken(self, data):
         labels = data[0]

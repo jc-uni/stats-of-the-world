@@ -9,14 +9,26 @@ AllQueries = Queries()
 Connection = Connect()
 
 class Control():
-    def find_offical_languages_popsize_spoken(self):
+
+        #Correlation between average life expectancy & population density of a country
+    def find_life_expectancy_popdensity_correlation(self):
+        data = []
+        for i in range(len(AllQueries.life_expectancy_popdensity_correlation_query)):
+            fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query[i])
+            reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
+            data.append(reformatted_fetched)
+        Plots.plot_life_expectancy_popdensity_correlation(data)
+        Plots.show_graph();
+
         #Speakers of official languages in the countries of the world
+    def find_offical_languages_popsize_spoken(self):
         fetched = Connection.fetch_data(AllQueries.offical_languages_popsize_spoken_query)
         final_result = Reform.offical_languages_popsize_spoken(fetched)
         Plots.plot_offical_languages_popsize_spoken(final_result)
         Plots.show_graph()
 
     def find_median_average_pop_city_country(self):
+
         #Average population of cities & countries
         fetched_city_pop = Connection.fetch_data(AllQueries.avg_city_pop_query)
         final_result_avg_city_pop = Reform.average_value(fetched_city_pop)
@@ -37,11 +49,4 @@ class Control():
 
         Plots.show_graph()
 
-    def find_life_expectancy_popdensity_correlation(self):
-        #Correlation between average life expectancy & population density of a country
-        colors = ["black","green","blue", "red","yellow","cyan"]
-        for i in range(len(AllQueries.life_expectancy_popdensity_correlation_query)):
-            fetched = Connection.fetch_data(AllQueries.life_expectancy_popdensity_correlation_query[i])
-            reformatted_fetched = Reform.life_expectancy_popdensity_correlation(fetched)
-            Plots.plot_life_expectancy_popdensity_correlation(reformatted_fetched,colors[i])
-        Plots.show_graph();
+    
